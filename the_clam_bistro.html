@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Calm Bistro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFFAF3;
+        }
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .menu-card {
+            transition: all 0.3s ease;
+        }
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .review-card {
+            transition: all 0.3s ease;
+        }
+        .review-card:hover {
+            transform: scale(1.02);
+        }
+        .custom-shadow {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="flex items-center">
+                        <i class="bi bi-house-heart text-2xl text-[#E9967A]"></i>
+                        <i class="bi bi-cake2 text-2xl text-[#8B4513] -ml-1"></i>
+                    </div>
+                    <span class="playfair text-xl font-bold">The Calm Bistro</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#menu" class="hover:text-[#E9967A]">Menu</a>
+                    <a href="#ambiance" class="hover:text-[#E9967A]">Ambiance</a>
+                    <a href="#reviews" class="hover:text-[#E9967A]">Reviews</a>
+                    <a href="#location" class="hover:text-[#E9967A]">Visit Us</a>
+                </div>
+                <button class="md:hidden" onclick="toggleMenu()">
+                    <i class="bi bi-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden bg-white shadow-lg absolute w-full z-40">
+        <div class="px-4 py-3 space-y-4">
+            <a href="#menu" class="block hover:text-[#E9967A]">Menu</a>
+            <a href="#ambiance" class="block hover:text-[#E9967A]">Ambiance</a>
+            <a href="#reviews" class="block hover:text-[#E9967A]">Reviews</a>
+            <a href="#location" class="block hover:text-[#E9967A]">Visit Us</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&q=80');">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="relative text-center text-white px-4">
+            <h1 class="playfair text-5xl md:text-6xl font-bold mb-4">The Calm Bistro</h1>
+            <p class="text-xl mb-8">Where comfort meets cuisine</p>
+            <div class="space-x-4">
+                <a href="#menu" class="bg-[#E9967A] px-8 py-3 rounded-full hover:bg-[#CD853F] transition-colors">View Menu</a>
+                <a href="#location" class="bg-transparent border-2 border-white px-8 py-3 rounded-full hover:bg-white hover:text-[#E9967A] transition-colors">Book Table</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Specialty Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="playfair text-3xl font-bold text-center mb-12">Our Specialties</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <div class="text-center">
+                    <div class="bg-[#FFF5E6] p-6 rounded-full w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+                        <i class="bi bi-egg-fried text-3xl text-[#CD853F]"></i>
+                    </div>
+                    <h3 class="font-semibold">Gourmet Burgers</h3>
+                </div>
+                <div class="text-center">
+                    <div class="bg-[#FFF5E6] p-6 rounded-full w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+                        <i class="bi bi-circle text-3xl text-[#CD853F]"></i>
+                    </div>
+                    <h3 class="font-semibold">Artisan Pizzas</h3>
+                </div>
+                <div class="text-center">
+                    <div class="bg-[#FFF5E6] p-6 rounded-full w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+                        <i class="bi bi-cup-straw text-3xl text-[#CD853F]"></i>
+                    </div>
+                    <h3 class="font-semibold">Fresh Mocktails</h3>
+                </div>
+                <div class="text-center">
+                    <div class="bg-[#FFF5E6] p-6 rounded-full w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+                        <i class="bi bi-cup-hot text-3xl text-[#CD853F]"></i>
+                    </div>
+                    <h3 class="font-semibold">Italian Pasta</h3>
+                </div>
+                <div class="text-center">
+                    <div class="bg-[#FFF5E6] p-6 rounded-full w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+                        <i class="bi bi-cake2 text-3xl text-[#CD853F]"></i>
+                    </div>
+                    <h3 class="font-semibold">Cheesecakes</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 px-4 bg-[#FFF5E6]">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="playfair text-3xl font-bold text-center mb-12">Popular Dishes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="menu-card bg-white rounded-lg overflow-hidden custom-shadow">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500" alt="Signature Burger" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl font-bold mb-2">Classic Cheese Burger</h3>
+                        <p class="text-gray-600 mb-4">Hand-crafted patty with melted cheddar</p>
+                        <span class="text-[#E9967A] font-semibold">$12.99</span>
+                    </div>
+                </div>
+
+                <div class="menu-card bg-white rounded-lg overflow-hidden custom-shadow">
+                    <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500" alt="Pizza" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl font-bold mb-2">Margherita Pizza</h3>
+                        <p class="text-gray-600 mb-4">Fresh basil, mozzarella, tomato sauce</p>
+                        <span class="text-[#E9967A] font-semibold">$15.99</span>
+                    </div>
+                </div>
+
+                <div class="menu-card bg-white rounded-lg overflow-hidden custom-shadow">
+                    <img src="https://images.unsplash.com/photo-1607478900766-efe13248b125?w=500" alt="Cheesecake" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="playfair text-xl font-bold mb-2">Berry Cheesecake</h3>
+                        <p class="text-gray-600 mb-4">New York style with fresh berries</p>
+                        <span class="text-[#E9967A] font-semibold">$8.99</span>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="bg-[#E9967A] text-white px-8 py-3 rounded-full hover:bg-[#CD853F] transition-colors">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ambiance Section -->
+    <section id="ambiance" class="py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="playfair text-3xl font-bold text-center mb-12">Experience The Calm</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-6">
+                    <p class="text-lg leading-relaxed text-gray-700">
+                        Step into a world of tranquility and taste. Our carefully curated ambiance features:
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <i class="bi bi-music-note-beamed text-[#E9967A] mr-3"></i>
+                            Soothing background music
+                        </li>
+                        <li class="flex items-center">
+                            <i class="bi bi-lamp text-[#E9967A] mr-3"></i>
+                            Warm, ambient lighting
+                        </li>
+                        <li class="flex items-center">
+                            <i class="bi bi-heart text-[#E9967A] mr-3"></i>
+                            Cozy seating arrangements
+                        </li>
+                        <li class="flex items-center">
+                            <i class="bi bi-flower1 text-[#E9967A] mr-3"></i>
+                            Vintage-inspired decor
+                        </li>
+                    </ul>
+                </div>
+                <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=500" alt="Cafe Interior" class="rounded-lg shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-16 px-4 bg-[#FFF5E6]">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="playfair text-3xl font-bold text-center mb-12">What Our Guests Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="review-card bg-white p-6 rounded-lg custom-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="text-[#FFD700]">★★★★★</div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Perfect spot for a romantic evening. The ambiance is just right and the food is exceptional!"</p>
+                    <p class="font-semibold">- Sarah M.</p>
+                </div>
+                
+                <div class="review-card bg-white p-6 rounded-lg custom-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="text-[#FFD700]">★★★★★</div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"The mocktails are creative and refreshing. Love the calm atmosphere!"</p>
+                    <p class="font-semibold">- Michael R.</p>
+                </div>
+                
+                <div class="review-card bg-white p-6 rounded-lg custom-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="text-[#FFD700]">★★★★★</div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Best cheesecake in town! The vintage decor adds such a nice touch."</p>
+                    <p class="font-semibold">- Emily T.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="playfair text-3xl font-bold text-center mb-12">Visit Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg custom-shadow">
+                    <h3 class="text-xl font-bold mb-6">Hours & Location</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold mb-2">Opening Hours</h4>
+                            <p>Monday - Thursday: 11:00 AM - 10:00 PM</p>
+                            <p>Friday - Sunday: 11:00 AM - 11:00 PM</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Address</h4>
+                            <p>123 Serenity Lane</p>
+                            <p>Comfort District, City 12345</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Contact</h4>
+                            <p>Phone: (555) 123-4567</p>
+                            <p>Email: hello@thecalmbistro.com</p>
+                        </div>
+                    </div>
+                    <button class="mt-8 bg-[#E9967A] text-white px-6 py-3 rounded-full hover:bg-[#CD853F] transition-colors">
+                        Make a Reservation
+                    </button>
+                </div>
+                <div class="bg-gray-200 rounded-lg overflow-hidden h-[400px]">
+                    <!-- Map placeholder -->
+                    <div class="h-full flex items-center justify-center">
+                        <i class="bi bi-geo-alt text-6xl text-gray-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t py-8">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="bi bi-house-heart text-2xl text-[#E9967A]"></i>
+                        <i class="bi bi-cake2 text-2xl text-[#8B4513] -ml-1"></i>
+                    </div>
+                    <span class="playfair text-xl font-bold">The Calm Bistro</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-600 hover:text-[#E9967A]"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-[#E9967A]"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-[#E9967A]"><i class="bi bi-twitter"></i></a>
+                </div>
+            </div>
+            <div class="text-center mt-6 text-gray-600">
+                <p>&copy; 2023 The Calm Bistro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobileMenu');
+            const menuButton = document.querySelector('button');
+            if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+                menu.classList.add('hidden');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                const headerOffset = 80;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu after clicking
+                const menu = document.getElementById('mobileMenu');
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
